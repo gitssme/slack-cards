@@ -27,7 +27,6 @@ class SlackAuthorizer
 #	return true if my_signature == slack_signature
     end
 
-    binding.remote_pry
     false
    end
 	
