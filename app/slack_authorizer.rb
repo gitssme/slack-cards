@@ -2,8 +2,7 @@ require 'openssl'
 require "base64"
 
 class SlackAuthorizer
-  ENV['SLACK_SIGNING_SECRET'] = '3f6c063b36ad76e2bd2a1ec80c14af7c'
-  UNAUTHORIZED_MESSAGE = 'Oops! Looks like the application is not authorized! Please review the token configuration.'.freeze
+`  UNAUTHORIZED_MESSAGE = 'Oops! Looks like the application is not authorized! Please review the token configuration.'.freeze
   UNAUTHORIZED_RESPONSE = ['200', {'Content-Type' => 'text'}, [UNAUTHORIZED_MESSAGE]]
 
   def initialize(app)
