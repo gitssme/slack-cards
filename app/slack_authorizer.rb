@@ -20,14 +20,13 @@ class SlackAuthorizer
     # Too old ignore request
     if (Time.now.to_i-timestamp.to_i) > 60*5
         return false
-    else
-        sig_basestring='v0:'<< timestamp << ':' << request_body
-        hash  = OpenSSL::HMAC.digest('sha256', slack_signing_secret, sig_basestring)
-        my_signature = 'v0=' << Base64.encode64(hash)
-	return true if my_signature == slack_signature
+#    else
+#        sig_basestring='v0:'<< timestamp << ':' << request_body
+#        hash  = OpenSSL::HMAC.digest('sha256', slack_signing_secret, sig_basestring)
+#        my_signature = 'v0=' << Base64.encode64(hash)
+#	return true if my_signature == slack_signature
     end
 
-    binding.remote_pry
     false
    end
 	
