@@ -25,6 +25,7 @@ class SlackAuthorizer
         my_signature = 'v0=' << Base64.encode64(hash)
 	return true if my_signature == slack_signature
     end
+    pry
     false
    end
 	
