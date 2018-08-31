@@ -18,7 +18,7 @@ class SlackAuthorizer
 
     #if absolute_value(time.time() - timestamp) > 60 * 5:
     # Too old ignore request
-    if (Time.now.to_i-timestamp.to_i) > 60*5
+    if (Time.now.to_i-timestamp) > 60*5
         return false
 #    else
 #        sig_basestring='v0:'<< timestamp << ':' << request_body
