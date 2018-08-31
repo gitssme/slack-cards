@@ -12,7 +12,7 @@ class SlackAuthorizer
   def validate_request?(req)
     request_body = req.body.read
     timestamp = req.params['X-Slack-Request-Timestamp']
-    slack_sigining_secret = ENV['SLACK_SIGNING_SECRET']
+    slack_sigining_secret = ENV['MY_SLACK_SIGNING_SECRET']
     slack_signature = req.params['X-Slack-Signature']
 
     #if absolute_value(time.time() - timestamp) > 60 * 5:
