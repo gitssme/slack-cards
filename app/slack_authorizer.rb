@@ -12,23 +12,29 @@ class SlackAuthorizer
   def validate_request?(req)
     request_body = req.body.read
     timestamp = req.params['X-Slack-Request-Timestamp']
-    slack_sigining_secret = ENV['MY_SLACK_SIGNING_SECRET']
+    slack_signing_secret = ENV['MY_SLACK_SIGNING_SECRET']
     slack_signature = req.params['X-Slack-Signature']
+
+    Rails.logger.debug "****request body #{request_body}"
+    Rails.logger.debug "****timestamp #{timestamp}"
+    Rails.logger.debug "****slack signing secret  #{slack_signing_secret}"
+    Rails.logger.debug "****slack_signature #{slack_signature}"
 
     #if absolute_value(time.time() - timestamp) > 60 * 5:
     # Too old ignore request
     if (Time.now.to_i-timestamp.to_i) > 60*5
-	puts "Time is offf"
+	Rails.logger.debug " *****Time is offf"
         return false
     else
         sig_basestring='v0:'<< timestamp << ':' << request_body
-        hash  = OpenSSL::HMAC.digest('sha256', ENV['SLACK_SIGNING_SECRET'], sig_basestring)
+        hash  = OpenSSL::HMAC.digest('sha256', slack_signing_secret, sig_basestring)
         my_signature = 'v0=' << Base64.encode64(hash)
 	return true if my_signature == slack_signature
     end
-    puts "Signatures don't match "
-    puts "my_signature  #{my_signature}"
-    puts "slack_signature #{slack_signature}"
+    Rails.logger.debug "Signatures don't match "
+    Rails.logger.debug "my_signature  #{my_signature}"
+    Rails.logger.debug "slack_signature #{slack_signature}"
+
     false
    end
 	
