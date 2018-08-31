@@ -18,6 +18,7 @@ class SlackAuthorizer
     #if absolute_value(time.time() - timestamp) > 60 * 5:
     # Too old ignore request
     if (Time.now.to_i-timestamp.to_i) > 60*5
+	puts "Time is offf"
         return false
     else
         sig_basestring='v0:'<< timestamp << ':' << request_body
@@ -25,7 +26,9 @@ class SlackAuthorizer
         my_signature = 'v0=' << Base64.encode64(hash)
 	return true if my_signature == slack_signature
     end
-    pry
+    puts "Signatures don't match "
+    puts "my_signature  #{my_signature}"
+    puts "slack_signature #{slack_signature}"
     false
    end
 	
