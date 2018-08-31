@@ -15,15 +15,10 @@ class SlackAuthorizer
     slack_signing_secret = ENV['MY_SLACK_SIGNING_SECRET']
     slack_signature = req.params['X-Slack-Signature']
 
-    Rails.logger.debug "****request body #{request_body}"
-    Rails.logger.debug "****timestamp #{timestamp}"
-    Rails.logger.debug "****slack signing secret  #{slack_signing_secret}"
-    Rails.logger.debug "****slack_signature #{slack_signature}"
 
     #if absolute_value(time.time() - timestamp) > 60 * 5:
     # Too old ignore request
     if (Time.now.to_i-timestamp.to_i) > 60*5
-	Rails.logger.debug " *****Time is offf"
         return false
     else
         sig_basestring='v0:'<< timestamp << ':' << request_body
@@ -31,10 +26,8 @@ class SlackAuthorizer
         my_signature = 'v0=' << Base64.encode64(hash)
 	return true if my_signature == slack_signature
     end
-    Rails.logger.debug "Signatures don't match "
-    Rails.logger.debug "my_signature  #{my_signature}"
-    Rails.logger.debug "slack_signature #{slack_signature}"
 
+    binding.remote_pry
     false
    end
 	
