@@ -9,6 +9,7 @@ get '/card/images/' do
 end
 
 post '/slack/command' do
+  log(params)
   case params['text'].to_s.strip
   when 'help', '' then HELP_RESPONSE
   else 'OK'

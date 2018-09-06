@@ -1,0 +1,22 @@
+[2018-09-06 14:36:14] INFO  WEBrick 1.4.2
+[2018-09-06 14:36:14] INFO  ruby 2.5.1 (2018-03-29) [x86_64-darwin15]
+[2018-09-06 14:36:14] INFO  WEBrick::HTTPServer#start: pid=37955 port=9292
+[2018-09-06 14:36:43] INFO  going to shutdown ...
+[2018-09-06 14:36:43] INFO  WEBrick::HTTPServer#start done.
+[2018-09-06 14:37:53] INFO  WEBrick 1.4.2
+[2018-09-06 14:37:53] INFO  ruby 2.5.1 (2018-03-29) [x86_64-darwin15]
+[2018-09-06 14:37:53] INFO  WEBrick::HTTPServer#start: pid=37973 port=9292
+::1 - - [06/Sep/2018:14:38:08 -0700] "GET / HTTP/1.1" 404 458 0.0197
+::1 - - [06/Sep/2018:14:38:09 -0700] "GET /__sinatra__/404.png HTTP/1.1" 200 18893 0.0075
+::1 - - [06/Sep/2018:14:38:09 -0700] "GET /favicon.ico HTTP/1.1" 404 469 0.0009
+[2018-09-06 14:39:04] INFO  going to shutdown ...
+[2018-09-06 14:39:04] INFO  WEBrick::HTTPServer#start done.
+[2018-09-06 14:39:14] INFO  WEBrick 1.4.2
+[2018-09-06 14:39:14] INFO  ruby 2.5.1 (2018-03-29) [x86_64-darwin15]
+[2018-09-06 14:39:14] INFO  WEBrick::HTTPServer#start: pid=37989 port=9292
+::1 - - [06/Sep/2018:14:39:16 -0700] "GET / HTTP/1.1" 404 458 0.0188
+::1 - - [06/Sep/2018:14:41:22 -0700] "GET /slack/command HTTP/1.1" 404 476 0.0100
+::1 - - [06/Sep/2018:14:41:34 -0700] "GET /slack/command HTTP/1.1" 404 476 0.0016
+::1 - - [06/Sep/2018:14:41:47 -0700] "GET /card/images/ HTTP/1.1" 200 - 0.0009
+[2018-09-06 14:41:56] INFO  going to shutdown ...
+[2018-09-06 14:41:56] INFO  WEBrick::HTTPServer#start done.
