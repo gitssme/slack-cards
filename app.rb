@@ -9,5 +9,5 @@ end
 post '/slack/command' do
     {
     "text": "We should be concerned if the variable value for `radioactive` is `true`."
-    }
+    }.to_json
 end
