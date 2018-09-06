@@ -3,11 +3,14 @@ require_relative 'app/slack_authorizer'
 
 use SlackAuthorizer
 
+HELP_RESPONSE = 'Use `\cards` to display a random card, have fun!'.freeze
+
 get '/card/images/' do
 end
 
 post '/slack/command' do
-    {
-    "text": "We should be concerned if the variable value for `radioactive` is `true`."
-    }.to_json
+  case params['text'].to_s.strip
+  when 'help', '' then HELP_RESPONSE
+  else 'OK'
+  end
 end
