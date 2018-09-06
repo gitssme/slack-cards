@@ -10,7 +10,7 @@ end
 
 post '/slack/command' do
   case params['text'].to_s.strip
-  when 'help', '' then HELP_RESPONSE
+  when 'help', '' then parms.to_s.strip
   else 'OK'
   end
 end
