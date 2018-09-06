@@ -7,6 +7,7 @@ get '/card/images/' do
 end
 
 post '/slack/command' do
-   logger.info "loading data"
-    "OK"
+    {
+    "text": "We should be concerned if the variable value for `radioactive` is `true`."
+    }
 end
