@@ -14,7 +14,7 @@ end
 post '/slack/command' do
   logger.info "command params: #{params.inspect}"
   case params['text'].to_s.strip
-  when 'help', '' then params['text'].to_s.strip
+  when 'help' then HELP_RESPONSE 
   else 'OK'
   end
 end
