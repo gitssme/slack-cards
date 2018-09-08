@@ -1,4 +1,4 @@
-require 'deal_cards'
+require_relative 'deal_cards'
 require 'httpclient'
 
 class SlackMessenger

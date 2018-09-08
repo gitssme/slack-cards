@@ -1,6 +1,7 @@
 require 'sinatra'
 require_relative 'app/slack_authorizer'
 require_relative 'app/slack_messenger'
+
 use SlackAuthorizer
 
 set :public_folder, 'images'
