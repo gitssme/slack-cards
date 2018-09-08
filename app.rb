@@ -14,7 +14,6 @@ get '/card/images/*.*' do
   name, ext = params['splat']
   logger.info "#{name} #{ext}"
   logger.info "Slack Messenger   #{SlackMessenger.deliver(params['user_name'])}"
-
   send_file File.join(settings.public_folder, "#{name}.#{ ext}" )
 end
 
@@ -23,6 +22,7 @@ post '/slack/command' do
   case params['text'].to_s.strip
   when 'help' then HELP_RESPONSE
   else 
-     SlackMessenger.deliver(params['user_name'])
+     res = SlackMessenger.deliver(params['user_name'])
+     log.info res
   end
 end
