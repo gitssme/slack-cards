@@ -34,3 +34,15 @@
 ::1 - - [07/Sep/2018:14:10:39 -0700] "GET /__sinatra__/500.png HTTP/1.1" 200 24378 0.0329
 ::1 - - [07/Sep/2018:21:08:12 -0700] "GET /card/images/KS.png HTTP/1.1" 200 179903 0.0428
 ::1 - - [07/Sep/2018:21:09:32 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.3427
+::1 - - [08/Sep/2018:11:05:21 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.2474
+::1 - - [08/Sep/2018:11:05:52 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.2058
+::1 - - [08/Sep/2018:11:47:29 -0700] "GET /__sinatra__/500.png HTTP/1.1" 200 24378 0.0161
+::1 - - [08/Sep/2018:11:53:29 -0700] "GET /card/images/KS.png HTTP/1.1" 200 179903 0.2745
+::1 - - [08/Sep/2018:12:01:10 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.1967
+::1 - - [08/Sep/2018:12:02:57 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.6062
+::1 - - [08/Sep/2018:12:06:03 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.2023
+::1 - - [08/Sep/2018:12:10:11 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.2496
+::1 - - [08/Sep/2018:12:14:56 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.2479
+::1 - - [08/Sep/2018:12:28:10 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.2835
+::1 - - [08/Sep/2018:12:29:21 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.6167
+::1 - - [08/Sep/2018:12:43:51 -0700] "GET /card/images/KS.png HTTP/1.1" 304 - 0.2345

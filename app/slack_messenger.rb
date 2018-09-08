@@ -24,11 +24,12 @@ class SlackMessenger
       text: "Here's a card",
       as_user: false,
       link_names: true,
-      attachments:"#{attachments}"
+      attachments:attach
     }
   end
   
-  def attachments
+  def attach
+  url = DealCards.new.to_s
   {
     "attachments": [
         {
@@ -39,7 +40,7 @@ class SlackMessenger
             "author_icon": "https://flic.kr/p/5a9YUH",
             "title": "Today's ??? mystery card",
             "text": "Suprise, today's card",
-            "image_url": "#{url = DealCards.new}",
+            "image_url": "#{url.to_s}",
             "ts": "#{Time.new.to_i}"
         }
     ]
