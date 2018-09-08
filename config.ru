@@ -3,6 +3,9 @@ require 'rack'
 require 'pry-remote'
 require 'logger'
 
+use Rack::Static,
+  :root => "images"
+
 log_file = ::File.open('log/sinatra.log', 'a+')
 log_file.sync=true
 logger = Logger.new(log_file)

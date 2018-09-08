@@ -8,7 +8,7 @@ class DealCards
   end
 
   def build_url(c)
-     base_url = "https://pacific-sands-78456.herokuapp.com/card/images/"
+     base_url = "https://pacific-sands-78456.herokuapp.com/"
      puts base_url << random_card << ".png"
      base_url << random_card << ".png"
   end
