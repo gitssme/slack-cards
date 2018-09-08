@@ -21,10 +21,9 @@ class SlackMessenger
     {
       token: ENV['SLACK_OAUTH'],
       channel: @to,
-      text: "Here's a card",
+      text: attach,
       as_user: false,
-      link_names: true,
-      attachments:attach
+      link_names: true
     }
   end
   
