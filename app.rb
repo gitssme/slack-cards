@@ -4,7 +4,7 @@ require_relative 'app/slack_messenger'
 
 use SlackAuthorizer
 
-set :public_folder, 'card/images'
+set :public_folder, '/card/images'
 
 HELP_RESPONSE = 'Use `/cards` to display a random card, have fun!'.freeze
 
