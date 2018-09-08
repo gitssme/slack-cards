@@ -21,9 +21,10 @@ class SlackMessenger
     {
       token: ENV['SLACK_OAUTH'],
       channel: @to,
-      text: attach,
+      text: "Here's your card",
       as_user: false,
-      link_names: true
+      link_names: true,
+      attachments: attach
     }
   end
   
@@ -46,4 +47,3 @@ class SlackMessenger
   }
   end
 end
-
