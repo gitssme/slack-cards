@@ -1,6 +1,6 @@
 require 'sinatra'
 require_relative 'app/slack_authorizer'
-
+require_relative 'app/slack_messenger'
 use SlackAuthorizer
 
 set :public_folder, 'images'
@@ -18,6 +18,6 @@ post '/slack/command' do
   logger.info "command params: #{params.inspect}"
   case params['text'].to_s.strip
   when 'help' then HELP_RESPONSE 
-  else 'OK'
+  else SlackMessenger.deliver(params['user_name'])
   end
 end
