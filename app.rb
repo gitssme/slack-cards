@@ -24,6 +24,5 @@ post '/slack/command' do
   when 'help' then HELP_RESPONSE
   else 
      SlackMessenger.deliver(params['user_name'])
-     OK_RESPONSE
   end
 end
