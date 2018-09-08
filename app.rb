@@ -21,7 +21,8 @@ end
 post '/slack/command' do
   logger.info "command params: #{params.inspect}"
   case params['text'].to_s.strip
-  when 'help' then HELP_RESPONSE 
+  when 'help' then HELP_RESPONSE
+  else 'OK'
   #else 
   #   SlackMessenger.deliver(params['user_name'])
   #   OK_RESPONSE
