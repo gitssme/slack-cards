@@ -21,7 +21,7 @@ class DealCards
 		  "AH": "fsoxIN0.png", "3C": "FIIhle8.png", "2H": "zqsF33K.png", "2D": "a7UvaUn.png",
 		  "4D": "GvsZTvE.png", "5D": "T9R7Itw.png", "10C": "SOd31v9.png", "7D": "tCgiGR1.png",
 		  "10D": "bUfogMX.png", "9C": "bUfogMX.png", "3H": "crsTCQ0.png", "2C": "8ftXL42.png"}
-    rand_card(c.to_sym)
+    rand_card[c.to_sym]
   end		   
     
 

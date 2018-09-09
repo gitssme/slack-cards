@@ -12,6 +12,7 @@ OK_RESPONSE = "Thanks for sending this!.".freeze
 
 get '/images/*.*' do
   name, ext = params['splat']
+  logger.info "Slack msg:  #{SlackMessenger.deliver(params['user_id'])}"
   send_file File.join(settings.public_folder, "#{name}.#{ ext}" )
 end
 
