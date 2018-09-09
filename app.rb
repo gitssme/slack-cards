@@ -17,10 +17,8 @@ get '/images/*.*' do
 end
 
 post '/slack/command' do
-  logger.info "command params: #{params.inspect}"
   case params['text'].to_s.strip
   when 'help' then HELP_RESPONSE
   else res = SlackMessenger.deliver(params['user_id'])
-	logger.info "the response--- #{res.inspect}"
   end
 end

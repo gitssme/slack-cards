@@ -36,7 +36,6 @@ class SlackMessenger
             "author_name": "Cards app",
             "author_icon": "https://flic.kr/p/5a9YUH",
             "title": "Today's ??? mystery card",
-            "text": "Suprise, today's card",
             "image_url": "#{url.to_s}",
             "ts": "#{Time.new.to_i}"
         }
