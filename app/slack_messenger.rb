@@ -21,16 +21,14 @@ class SlackMessenger
   def params
     {
       channel: @to,
-      text: attach,
-      as_user: false,
-      link_names: true,
+      text: "Here's a card",
+      attachments: JSON.dump(attach)
     }
   end
   
   def attach
   url = DealCards.new.to_s
-  {
-    "attachments": [
+  [
         {
             "fallback": "Required plain-text summary of the attachment.",
             "color": "#36a64f",
@@ -43,6 +41,5 @@ class SlackMessenger
             "ts": "#{Time.new.to_i}"
         }
     ]
-  }
   end
 end
