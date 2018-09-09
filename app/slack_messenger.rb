@@ -13,13 +13,13 @@ class SlackMessenger
   end
 
   def deliver
-    client = HTTPClient.new
+    client = HTTPClient.new default_header: {"Content-type" => "application/json"}
+    client = HTTPClient.new default_header: {"Authorization" => "Bearer #{ENV['SLACK_OAUTH']}"}
     client.post(SLACK_API_ENDPOINT, params)
   end
 
   def params
     {
-      token: ENV['SLACK_OAUTH'],
       channel: @to,
       text: "Here's your card",
       as_user: false,
